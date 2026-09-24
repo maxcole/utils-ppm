@@ -1,5 +1,7 @@
 # network-tools
 
+alias bandwhich="sudo bandwhich"
+
 netperf() {
   local ts_ip="${1:-100.108.218.1}"
   local uf_ip="${2:-172.31.9.11}"
@@ -19,6 +21,14 @@ netperf() {
   echo ""
   echo "-- Download --"
   iperf3 -c $uf_ip -t $duration -R
+}
+
+scan_net() {
+  local target
+  target=$(ip_addr -c) || { echo "Error: Could not determine active local network." >&2; return 1; }
+
+  echo "Scanning subnet $target..."
+  sudo nmap -sn "$target" "$@"
 }
 
 scan_ports() {
