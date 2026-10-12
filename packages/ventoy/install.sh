@@ -31,6 +31,7 @@ install_linux() {
 post_install() {
   user_message "ISOs are copied from ~/.cache/ventoy/isos; to use pim's: ln -s ~/.cache/pim/isos ~/.cache/ventoy/isos"
   user_message "Download ISOs from ~/.config/ventoy/isos.yml with: ventoy get <id> (list them with: ventoy get)"
+  user_message "For a PiKVM, use a disk image instead of a stick: ventoy prepare /srv/nfs/pikvm/ventoy.img (see: ventoy help)"
 }
 
 remove_linux() {

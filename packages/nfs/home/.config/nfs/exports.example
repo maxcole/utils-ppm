@@ -5,3 +5,7 @@
 # Examples:
 # /srv/nfs/media    192.168.1.0/24(rw,sync,no_subtree_check,no_root_squash)
 # /srv/nfs/backups  192.168.1.0/24(rw,sync,no_subtree_check,no_root_squash)
+#
+# Ventoy disk image for a PiKVM, read-only is enough (see the site's pikvm setup scripts,
+# e.g. ~/spaces/rws/infra/roc/pikvm, which put this in /etc/exports.d instead):
+# /srv/nfs/pikvm    <pikvm-ip>(ro,sync,no_subtree_check,root_squash)
